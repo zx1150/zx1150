@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑马程序员360浏览器</title>
+    <!-- fullpage在index上面有顺序规定 -->
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="headercontent">
+            <img src="image/logo.png" alt="">
+            <div class="nav">
+                <a href="#">论坛</a>
+                <a href="#">扩展</a>
+                <a href="#">Mac版</a>
+            </div>
+        </div>
+    </div>
+    <div id="fullpage">
+        <div class="section section1">
+            <div class="title-box">
+                <p>畅快浏览，极致体验</p>
+                <a href="#"></a>
+            </div>
+            <img src="image/ball1.png" alt="" class="ball1">
+            <img src="image/ball2.png" alt="" class="ball2">
+            <img src="image/ship.png" alt="" class="ship">
+        </div>
+        <!-- 这是第二屏 -->
+        <div class="section">
+            <video autoplay loop muted>
+                <source src="https://s2.ssl.qhres2.com/static/dfeefadde568eab0.mp4" type="video/mp4">
+            </video>
+            <div class="word-content">
+                <p class="bigword">极速</p>
+                <div class="line"></div>
+                <p class="midword">Chromium78全新内核</p>
+                <p class="smallword">性能强劲，快如闪电</p>
+                <a href="#"></a>
+            </div>
+        </div>
+        <!-- 第三屏 -->
+        <div class="section">
+            <video autoplay loop muted>
+                <source src="https://s3.ssl.qhres2.com/static/9bebcedf292f327e.mp4" type="video/mp4">
+            </video>
+            <div class="word-content">
+                <p class="bigword">极酷</p>
+                <div class="line"></div>
+                <p class="midword">Chromium78全新内核</p>
+                <p class="smallword">性能强劲，快如闪电</p>
+                <a href="#"></a>
+            </div>
+        </div>
+        <!-- 第四屏 -->
+        <div class="section">
+            <video autoplay loop muted>
+                <source src="https://s1.ssl.qhres2.com/static/fdf92889c539303c.mp4" type="video/mp4">
+            </video>
+            <div class="word-content">
+                <p class="bigword">极安全</p>
+                <div class="line"></div>
+                <p class="midword">DNS加密防挟持</p>
+                <p class="smallword">安全升级，肆意无忌</p>
+                <a href="#"></a>
+            </div>
+        </div>
+        <!-- 第五屏 -->
+        <div class="section">
+            <video autoplay loop muted>
+                <source src="https://s1.ssl.qhres2.com/static/7e7f0ec4a0cc7a66.mp4" type="video/mp4">
+            </video>
+            <div class="word-content">
+                <p class="bigword">极视界</p>
+                <div class="line"></div>
+                <p class="midword">4K高清视频播放</p>
+                <p class="smallword">还原真实之美，尽显万物本色</p>
+                <a href="#"></a>
+            </div>
+            <!-- 底部模块 -->
+            <div class="footer">
+                copyright123<br>
+                <img src="image/icon.png" alt=""> 456
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 必须先jquery引入 也是有顺序 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fullpage.js"></script>
+    <script>
+        $(function () {
+            $('#fullpage').fullpage({
+                'navigation': true,
+                // 滚动到当前屏幕，文字模块渐渐显示出来
+                afterLoad: function () {
+                    $(this).find('.word-content').fadeIn();
+                },
+                // 离开当前屏幕，文字模块渐渐淡出
+                onLeave: function () {
+                    $(this).find('.word-content').fadeOut();
+                },
+            });
+        });
+    </script>
+
+</body>
+
+</html>
